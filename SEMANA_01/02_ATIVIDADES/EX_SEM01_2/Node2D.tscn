@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+var status: = true
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+var rng = RandomNumberGenerator.new()
+var numRandom
+
+var numRandomPosition
+
+func _process(delta):
+	rng.randomize()
+	numRandom = rng.randi_range(0, 3)
+	numRandomPosition = rng.randi_range(0, 10)
+	print(numRandom)
+	if numRandom == 1:
+		$Icon2.move_local_x(numRandomPosition)
+	elif numRandom == 2:
+		$Icon2.move_local_x(- numRandomPosition)
+	elif numRandom == 3:
+		$Icon2.move_local_y(numRandomPosition)
+	elif numRandom == 0:
+		$Icon2.move_local_y(- numRandomPosition)
+"
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Sprite
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( -28, 6 )
+script = SubResource( 1 )
+
+[node name="Icon2" type="Sprite" parent="."]
+position = Vector2( 561, 279 )
+scale = Vector2( 4.21289, 3.97095 )
+texture = ExtResource( 2 )
+script = SubResource( 2 )
