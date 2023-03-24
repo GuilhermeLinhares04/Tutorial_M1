@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
+[ext_resource path="res://Preview_143.png" type="Texture" id=4]
+[ext_resource path="res://Céu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Stacked pixel.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.290196, 0.290196, 0.290196, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 606.0 ],
+"_edit_vertical_guides_": [ 8525.0 ]
+}
+
+[node name="Fundo" type="Sprite" parent="."]
+position = Vector2( 702, 297 )
+texture = ExtResource( 4 )
+
+[node name="Fundo2" type="Sprite" parent="."]
+position = Vector2( 2131, 298 )
+texture = ExtResource( 4 )
+
+[node name="Fundo3" type="Sprite" parent="."]
+position = Vector2( 3561, 298 )
+texture = ExtResource( 4 )
+
+[node name="Fundo4" type="Sprite" parent="."]
+position = Vector2( 4990, 298 )
+texture = ExtResource( 4 )
+
+[node name="Fundo5" type="Sprite" parent="."]
+position = Vector2( 6411, 298 )
+texture = ExtResource( 4 )
+
+[node name="Fundo6" type="Sprite" parent="."]
+position = Vector2( 7813, 298 )
+texture = ExtResource( 4 )
+
+[node name="Fundo7" type="Sprite" parent="."]
+position = Vector2( 9244, 298 )
+texture = ExtResource( 4 )
+
+[node name="Fundo8" type="Sprite" parent="."]
+position = Vector2( 10648, 298 )
+texture = ExtResource( 4 )
+
+[node name="Fundo9" type="Sprite" parent="."]
+visible = false
+position = Vector2( 12057, 298 )
+texture = ExtResource( 4 )
+
+[node name="Fundo10" type="Sprite" parent="."]
+visible = false
+position = Vector2( 13426, 297 )
+texture = ExtResource( 4 )
+
+[node name="Fundo11" type="Sprite" parent="."]
+visible = false
+position = Vector2( 14855, 298 )
+texture = ExtResource( 4 )
+
+[node name="Fundo12" type="Sprite" parent="."]
+visible = false
+position = Vector2( 16285, 298 )
+texture = ExtResource( 4 )
+
+[node name="Fundo13" type="Sprite" parent="."]
+visible = false
+position = Vector2( 17714, 298 )
+texture = ExtResource( 4 )
+
+[node name="Fundo14" type="Sprite" parent="."]
+visible = false
+position = Vector2( 19135, 298 )
+texture = ExtResource( 4 )
+
+[node name="Fundo15" type="Sprite" parent="."]
+visible = false
+position = Vector2( 20537, 298 )
+texture = ExtResource( 4 )
+
+[node name="Fundo16" type="Sprite" parent="."]
+visible = false
+position = Vector2( 21968, 298 )
+texture = ExtResource( 4 )
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+__meta__ = {
+"_edit_horizontal_guides_": [ 607.0 ],
+"_edit_vertical_guides_": [ 8993.0 ]
+}
+
+[node name="Obstacle_container" type="Node2D" parent="."]
+
+[node name="Céu" parent="." instance=ExtResource( 5 )]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 359.0
+margin_top = 272.0
+margin_right = 645.0
+margin_bottom = 366.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "REINICIAR"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
